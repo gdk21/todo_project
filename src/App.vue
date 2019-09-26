@@ -1,23 +1,40 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+  <div>
+    {{ todos }}
+  <todos v-model="todos"></todos>
+  <todos></todos>
+  <todos></todos>
+    <button @click.prevent="addTodo">Add</button>
   </div>
 </template>
 
 <script>
+import Todos from './components/Todos'
+
 export default {
-  name: 'App'
+
+  data () {
+    return {
+      todos: [{
+        name: 'Demo',
+        completed: true
+      }]
+    }
+  },
+  components: {
+    Todos
+  },
+  methods: {
+    addTodo () {
+      this.todos.push({
+        name: 'Gael',
+        completed: false
+      })
+    },
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
