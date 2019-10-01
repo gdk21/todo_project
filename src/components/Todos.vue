@@ -1,9 +1,8 @@
 <template>
 <section class="todoapp">
   <header class="header">
-    <h1>Todos</h1>
+    <h1>{{ title }}</h1>
     <input type="text" class="new-todo" placeholder="Ajouter une tâche" v-model="newTodo" @keyup.enter="addTodo">
-
   </header>
   <div class="main">
     <input type="checkbox" class="toggle-all" v-model="allDone">
@@ -46,6 +45,7 @@ export default {
   },
   data () {
     return {
+      title: '',
       todos: this.value,
       newTodo: '',
       filter: 'all',

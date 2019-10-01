@@ -1,13 +1,21 @@
 <template>
-    $END$
+  <header>
+    <h1>{{ title }}</h1>
+  </header>
 </template>
 
 <script>
-  export default {
-    name: 'Add'
+export default {
+  name: 'Add',
+  data () {
+    return {
+      title: 'AZERTY'
+    }
   }
+}
+
 </script>
 
-<style scoped>
+<style src="./todos.css">
 
 </style>
