@@ -1,23 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+
+    <todos v-for="n in range" ></todos>
+    <button @click.prevent="addTodo">Add</button>
   </div>
 </template>
 
 <script>
+import Todos from './components/Todos'
 export default {
-  name: 'App'
+
+  data () {
+    return {
+      title: '',
+      range:0,
+      todos: [{
+
+      }]
+    }
+  },
+  components: {
+    Todos
+  },
+  methods: {
+    addTodo () {
+      console.log('lel')
+      this.range += 1;
+      this.title = 'lel';
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
